@@ -1,29 +1,10 @@
 package JavaSE8;
 
-import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.*;
 
 public class Functions {
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter @Setter
-    static class Paper {
-        String spacing;
-        Float margin;
-
-        public void print() {
-            System.out.println(this);
-        }
-
-        @Override
-        public String toString(){
-            return spacing + ": Margin - " + margin;
-        }
-    }
-
     public static void main(String[] args) {
         List<Paper> paperList = new ArrayList<>() {
             {
@@ -49,12 +30,12 @@ public class Functions {
         //region Predicate
         System.out.println("====== Enter Predicate ======");
         System.out.println("Wide Ruled Paper:");
-        evaluate(paperList, (n) -> n.spacing.contains("Wide"));
+        evaluate(paperList, (n) -> n.getSpacing().contains("Wide"));
 
         System.out.println();
 
         System.out.println("College Ruled Paper:");
-        evaluate(paperList, (n) -> n.spacing.contains("College"));
+        evaluate(paperList, (n) -> n.getSpacing().contains("College"));
         System.out.println("====== Exit Predicate ======\n");
         //endregion
 
