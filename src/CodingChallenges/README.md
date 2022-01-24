@@ -4,7 +4,7 @@ ______________________________
 ----------------------
 A string is an almost-palindrome if, by changing only one character, you can make it a palindrome. Create a function that returns true if a string is an almost-palindrome and false otherwise.
 
-Examples:
+Examples:  
 almostPalindrome("abcdcbg") ➞ true  
 // Transformed to "abcdcba" by changing "g" to "a".
 

@@ -14,7 +14,7 @@ public class Menu {
 
     Map<Item, Item.Category> menuItems;
 
-    public Menu(Type type){
+    public Menu(Type type) {
         switch (type) {
             case ADULT:
                 menuItems = new HashMap<>() {

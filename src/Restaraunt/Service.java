@@ -11,6 +11,7 @@ public class Service {
         Set<Table> tables = createTables();
         String strInput;
 
+        // To show that there are no duplicate tables
         System.out.println(tables.stream()
                 .sorted(Comparator.comparingInt(Table::getTableNumber))
                 .collect(Collectors.toList()));
@@ -32,8 +33,9 @@ public class Service {
 
                 case "no":
                 case "n":
-                    System.out.println("Alright. Follow me this way to your table.");
                     // TODO: Assign and store table
+                    System.out.println("Alright. Follow me this way to your table.");
+
                     break;
 
                 default:
@@ -58,14 +60,14 @@ public class Service {
                             add(rand.nextInt(30) + 1);
                         }
                     }
-                });   
+                });
             }
         };
 
         return new HashSet<>() {
             {
                 for (int i = 0; i < 30; i++) {
-                    add(new Table(nums.pop()));
+                    add(new Table(nums.pop(), rand.nextInt(10 + 1)));
                 }
             }
         };
