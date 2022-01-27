@@ -10,6 +10,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Paper extends PaperComparator {
+    enum Type {
+        NOTEBOOK,
+        CONSTRUCTION,
+        COPY,
+        PARCHMENT,
+        SAND
+    } // Could do separate classes, but this is just practice
+
+    private Type type;
     private String spacing;
     private Float margin;
 
@@ -19,6 +28,6 @@ public class Paper extends PaperComparator {
 
     @Override
     public String toString(){
-        return spacing + ": Margin - " + margin;
+        return type + ": (Spacing: " + spacing + ", Margin: " + margin + ")";
     }
 }

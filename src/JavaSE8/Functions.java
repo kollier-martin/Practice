@@ -8,8 +8,9 @@ public class Functions {
     public static void main(String[] args) {
         List<Paper> paperList = new ArrayList<>() {
             {
-                add(new Paper("Wide Rule", 0.05F));
-                add(new Paper("College Rule", 0.10F));
+                add(new Paper(Paper.Type.NOTEBOOK, "Wide Rule", 0.05F));
+                add(new Paper(Paper.Type.NOTEBOOK, "College Rule", 0.10F));
+                add(new Paper(Paper.Type.CONSTRUCTION, "Blank", 0.00F));
             }
         };
 
@@ -29,13 +30,13 @@ public class Functions {
 
         //region Predicate
         System.out.println("====== Enter Predicate ======");
-        System.out.println("Wide Ruled Paper:");
-        evaluate(paperList, (n) -> n.getSpacing().contains("Wide"));
+        System.out.println("Notebook Paper:");
+        evaluate(paperList, (n) -> n.getType().equals(Paper.Type.NOTEBOOK));
 
         System.out.println();
 
-        System.out.println("College Ruled Paper:");
-        evaluate(paperList, (n) -> n.getSpacing().contains("College"));
+        System.out.println("Construction Paper:");
+        evaluate(paperList, (n) -> n.getType().equals(Paper.Type.CONSTRUCTION));
         System.out.println("====== Exit Predicate ======\n");
         //endregion
 
