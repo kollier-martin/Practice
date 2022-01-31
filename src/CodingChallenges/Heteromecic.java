@@ -13,6 +13,17 @@ public class Heteromecic {
     }
 
     public static boolean isHeteromecic(int num) {
+        if(num % 2 != 0){
+            return false;
+        }
+
+        if (num == 0){return true;}
+
+        for (int o = 1; o < num; o++) {
+            if (o * (o + 1) == num){
+                return true;
+            }
+        }
 
         return false;
     }

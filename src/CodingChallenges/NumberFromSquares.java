@@ -9,10 +9,23 @@ public class NumberFromSquares {
                 new ArrayList<> (Arrays.asList (203, 11, 107));
 
         numToUse
-                .forEach(s -> System.out.println(newNum(s)));
+                .forEach(s -> System.out.println(isHappy(s)));
     }
 
-    public static boolean newNum(int num) {
+    public static boolean isHappy(int num) {
+        int temp;
+
+        do {
+            temp = num % 10;
+
+            if (temp == 4) {
+                return false;
+            } else if (temp == 1) {
+                return true;
+            }
+
+            num = num / 10;
+        } while (num > 0);
 
         return false;
     }
