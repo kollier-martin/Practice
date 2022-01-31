@@ -1,9 +1,6 @@
 package CodingChallenges;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ParallelArray {
     public static void main(String[] args) {
@@ -28,41 +25,26 @@ public class ParallelArray {
             }
         };
 
-        // Sort height list and refactor the names list to match these new indexes
-        // Create int array to hold the sorted index values
-        int[] dubArrIndices = new int[arraysize];
-        int maxIndex = 0;
-        // System.out.println(heightsAsDoubles);
+        // Map them to relate
+        Map<String, Double> namesHeights = new HashMap<>() {
+            {
+                for (int i = 0; i < arraysize; i++) {
+                    put(namesList.get(i), heightsAsDoubles.get(i));
+                }
+            }
+        };
 
-        // Populate int array with sorted values
-        //region TODO: Do I even need this and how?
-        for (int i = 0; i < arraysize; i++) {
-            maxIndex = heightsAsDoubles.get(i) > heightsAsDoubles.get(maxIndex) ? i : maxIndex;
-            dubArrIndices[i] = maxIndex;
-        }
+        // Sort map then return the keys as a String
+        List<Map.Entry<String, Double>> list = new ArrayList<>(namesHeights.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+        Collections.reverse(list);
 
-        // TODO: How to do this?
-        dubArrIndices[0] = maxIndex;
-        dubArrIndices[1] = maxIndex - 1;
-        dubArrIndices[2] = maxIndex + 1;
-        //endregion
-
-        // Add sorted values from list to new array
-        String[] nameArr = new String[arraysize];
-        for (int i = 0; i < arraysize; i++) {
-            nameArr[i] = namesList.get(dubArrIndices[i]);
-        }
-
-        // System.out.println(names);
-        // System.out.println(Arrays.toString(nameArr));
-        // Convert sorted array to String and return
         StringBuilder newNames = new StringBuilder();
-
-        for (int i = 0; i < arraysize; i ++) {
-            if (i != arraysize - 1) {
-                newNames.append(nameArr[i]).append(",");
+        for (int i = 0; i < arraysize; i++) {
+            if (i == (arraysize - 1)) {
+                newNames.append(list.get(i).getKey());
             } else {
-                newNames.append(nameArr[i]);
+                newNames.append(list.get(i).getKey()).append(",");
             }
         }
 
