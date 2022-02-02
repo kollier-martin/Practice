@@ -72,15 +72,6 @@ Notes:
 You can assume (and it is actually true!) that all positive whole numbers are either happy or unhappy. Any happy number will have a 1 in its sequence, and every unhappy number will have a 4 in its sequence.
 The only numbers passed to your function will be positive whole numbers.
 
-**Parallel Array**
----------------------------
--Description Here -  
-
-<ins> Examples </ins> <br>
-String names = "Malcolm,John,Lucy"; <br>
-String heights = "4.2,6.1,2.6"; <br>
-return "John, Malcolm, Lucy";
-
 **Median of Two Sorted Arrays**
 ---------------------------
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
