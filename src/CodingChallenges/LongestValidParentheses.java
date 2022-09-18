@@ -1,6 +1,8 @@
 package CodingChallenges;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 public class LongestValidParentheses {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class LongestValidParentheses {
     }
 
     // First Try (Fail)
-    public boolean sumOfValidParentheses(String s){
+    public boolean sumOfValidParentheses(String s) {
         char[] parentheses = s.toCharArray();
         int counter;
 
@@ -56,7 +58,7 @@ public class LongestValidParentheses {
             if (sToChar[count] == '(') {
                 stack.push(count);
             } else {
-                if(!stack.empty()) {
+                if (!stack.empty()) {
                     stack.pop();
                 }
 

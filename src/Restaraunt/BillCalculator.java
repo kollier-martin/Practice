@@ -3,8 +3,9 @@ package Restaraunt;
 public class BillCalculator {
     /**
      * Calculate the total for the receipt, accounts for gratuity if applicable
+     *
      * @param numOfCustomers Number of customers for the meal
-     * @param billAmt Total for the meal
+     * @param billAmt        Total for the meal
      * @return Total price
      */
     public static float calculateTotal(int numOfCustomers, int billAmt) {
@@ -17,9 +18,10 @@ public class BillCalculator {
 
     /**
      * Calculate the total for the receipt with a discount, accounts for gratuity if applicable
+     *
      * @param numOfCustomers Number of customers for the meal
-     * @param billAmt Total for the meal
-     * @param discount Integer used in calculations for applying discounts
+     * @param billAmt        Total for the meal
+     * @param discount       Integer used in calculations for applying discounts
      * @return Total price
      */
     public static float calculateTotalWithDiscount(int numOfCustomers, int billAmt, double discount) {

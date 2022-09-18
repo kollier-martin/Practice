@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter @Setter
+@Getter
+@Setter
 @ToString
 public class Table {
     private int customers;
@@ -13,7 +14,7 @@ public class Table {
     private int boosterSeats;
     private boolean occupied;
 
-    public Table(int tableNumber, int numOfSeats){
+    public Table(int tableNumber, int numOfSeats) {
         occupied = false;
         this.tableNumber = tableNumber;
         this.numOfSeats = numOfSeats;

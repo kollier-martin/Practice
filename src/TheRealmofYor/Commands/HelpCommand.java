@@ -7,28 +7,25 @@ import TheRealmofYor.Assets.Player;
  * commands that are currently usable.
  */
 
-public class HelpCommand extends Command
-{
-	private CommandList commands;
-	
-	public HelpCommand(CommandList usableWords)
-	{
-		super("Help");
-		commands = usableWords;
-	}
+public class HelpCommand extends Command {
+    private CommandList commands;
 
-	@Override
-	public boolean execute(Player player) 
-	{
-		/* 
-		 * Prints out list of usable commands
-		 */
-		
-		System.out.println("I am still here lost one. Allow me to help! ");
-		System.out.print("You may call upon these words of power at any time: ");
-		commands.printAll();
-		System.out.println("");
-		
-		return false; //placeholder
-	}
+    public HelpCommand(CommandList usableWords) {
+        super("Help");
+        commands = usableWords;
+    }
+
+    @Override
+    public boolean execute(Player player) {
+        /*
+         * Prints out list of usable commands
+         */
+
+        System.out.println("I am still here lost one. Allow me to help! ");
+        System.out.print("You may call upon these words of power at any time: ");
+        commands.printAll();
+        System.out.println("");
+
+        return false; //placeholder
+    }
 }

@@ -42,16 +42,15 @@ public class Service {
                     System.out.println("... Well then. Just going to take that as 1. Follow me.");
                     break;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logger.warning(e.getMessage());
             System.exit(0);
         }
     }
 
-    private static Set<Table> createTables(){
+    private static Set<Table> createTables() {
         Random rand = new Random();
-        
+
         Stack<Integer> nums = new Stack<>() {
             {
                 addAll(new LinkedHashSet<>() {

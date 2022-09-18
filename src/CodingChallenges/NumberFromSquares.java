@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class NumberFromSquares {
     public static void main(String[] args) {
         ArrayList<Integer> numToUse =
-                new ArrayList<> (Arrays.asList (203, 11, 107));
+                new ArrayList<>(Arrays.asList(203, 11, 107));
 
         numToUse
                 .forEach(s -> System.out.println(isHappy(s)));

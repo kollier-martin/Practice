@@ -1,8 +1,10 @@
 package Restaraunt;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Item {
     private String description;
     private String name;

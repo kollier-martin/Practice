@@ -7,7 +7,8 @@ import lombok.ToString;
 import java.util.Date;
 import java.util.UUID;
 
-@Getter @Setter
+@Getter
+@Setter
 @ToString
 public class Receipt {
     private UUID uuid;

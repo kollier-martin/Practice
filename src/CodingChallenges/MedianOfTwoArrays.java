@@ -1,8 +1,6 @@
 package CodingChallenges;
 
-import javax.lang.model.type.ArrayType;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 
 public class MedianOfTwoArrays {
@@ -35,17 +33,14 @@ public class MedianOfTwoArrays {
 
     public static double doForNoneDupes(int[] nums1, int[] nums2) {
         // Combine both arrays with no duplicates
-        HashSet<Double> combinedArray = new HashSet<>() {
-            {
-                for (double j : nums1) {
-                    add(j);
-                }
+        HashSet<Double> combinedArray = new HashSet<>();
+        for (double j : nums1) {
+            combinedArray.add(j);
+        }
 
-                for (double n : nums2) {
-                    add(n);
-                }
-            }
-        };
+        for (double n : nums2) {
+            combinedArray.add(n);
+        }
 
         // Convert set to array and get length
         Double[] combined = combinedArray.toArray(new Double[0]);
