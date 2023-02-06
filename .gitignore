@@ -154,3 +154,7 @@ local.properties
 
 # "temporary" build files
 /target
+
+# Error Logs
+/src/UDP/logs/
+/src/UDP/ReceivedFiles/
